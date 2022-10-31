@@ -18,17 +18,19 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser", "firefox");
         Configuration.browserVersion = System.getProperty("browserVersion", "100.0");
         Configuration.browserSize = System.getProperty("windowSize", "1920x1080");
-        Configuration.remote = System.getProperty("remoteBrowser", null);
 
-        if (System.getProperty("remoteBrowser") != null) {
-            System.getProperty("remoteBrowser");
+
+       String remoteBrowser = System.getProperty("remoteBrowser");
+
+        if (remoteBrowser != null) {
+            Configuration.remote = remoteBrowser;
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("enableVNC", true);
+            capabilities.setCapability("enableVideo", true);
+            Configuration.browserCapabilities = capabilities;
         }
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
 
-        Configuration.browserCapabilities = capabilities;
 
 
 
