@@ -47,15 +47,5 @@ tasks.withType(Test) {
     }
 }
 
-task one_property(type: Test){
-    useJUnitPlatform{
-        includeTags "one_property_test"
-    }
-}
-
-task many_property(type: Test){
-    useJUnitPlatform{
-        includeTags "many_property_test"
-    }
-}
+test{}
 

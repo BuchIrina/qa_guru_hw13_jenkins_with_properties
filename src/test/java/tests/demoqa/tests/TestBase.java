@@ -14,15 +14,18 @@ public class TestBase {
     static void configure() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
+        Configuration.browser = System.getProperty("browser", "firefox");
+        Configuration.browserVersion = System.getProperty("browserVersion", "100.0");
+        Configuration.browserSize = System.getProperty("windowSize", "1920x1080");
+        Configuration.remote = System.getProperty("remoteBrowser", null);
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("browserName", "chrome");
-//        capabilities.setCapability("browserVersion", "100.0");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
+
         if (System.getProperty("remoteBrowser") != null) {
             System.getProperty("remoteBrowser");
         }
