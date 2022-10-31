@@ -16,8 +16,8 @@ public class SystemPripertiesTests {
     @Tag("many_property_test")
     void simpleProperties2Test() {
         String browserName = System.getProperty("browser", "firefox");
-        String browserVersion = System.getProperty("version", "99");
-        String windowSize = System.getProperty("windowSize", "1900x1080");
-        String remote = System.getProperty("remoteBrowser", null);
+        String browserVersion = System.getProperty("browserVersion", "100.0");
+        String windowSize = System.getProperty("windowSize", "1920x1080");
+        String remoteBrowser = System.getProperty("remoteBrowser", null);
     }
 }
