@@ -47,5 +47,7 @@ tasks.withType(Test) {
     }
 }
 
-test{}
+test{
+    useJUnitPlatform()
+}
 
