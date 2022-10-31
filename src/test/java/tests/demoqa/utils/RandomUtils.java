@@ -6,7 +6,6 @@ import java.util.Random;
 
 public class RandomUtils {
 
-
     public static String getRandomPhoneNumber(int numbers) {
         String generatedString = RandomStringUtils.randomNumeric(numbers);
         return generatedString;
