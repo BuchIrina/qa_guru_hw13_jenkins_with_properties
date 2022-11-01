@@ -27,7 +27,7 @@ public class TestBase {
 
         String remoteBrowser = System.getProperty("remoteBrowser");
 
-        if (remoteBrowser.equals("")) {
+        if (remoteBrowser != null) {
             Configuration.remote = remoteBrowser;
         }
     }
