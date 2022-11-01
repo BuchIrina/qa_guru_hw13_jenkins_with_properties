@@ -24,9 +24,7 @@ public class TestBase {
         Configuration.browserVersion = System.getProperty("browserVersion", "100");
         Configuration.browserSize = System.getProperty("windowSize", "1920x1080");
 
-
         String remoteBrowser = System.getProperty("remoteBrowser");
-
         if (remoteBrowser != null) {
             Configuration.remote = remoteBrowser;
         }
